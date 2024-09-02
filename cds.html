@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="output.css" rel="stylesheet"> -->
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+// v0 by Vercel.
+// https://v0.dev/t/BYNnL1Ek011
+-->
+
+    <!-- <style>
+      :root {
+        --background: 210 100% 6%;
+        --foreground: 180 100% 90%;
+        --primary: 200 100% 28%;
+        --primary-foreground: 180 100% 90%;
+        --secondary: 203 23% 30%;
+        --secondary-foreground: 180 100% 90%;
+        --accent: 198 70% 50%;
+        --accent-foreground: 185 10% 13%;
+        --destructive: 0 98% 44%;
+        --destructive-foreground: 0 0% 100%;
+        --muted: 200 50% 30%;
+        --muted-foreground: 180 100% 90%;
+        --card: 210 100% 12%;
+        --card-foreground: 180 100% 90%;
+        --popover: 210 100% 15%;
+        --popover-foreground: 180 100% 90%;
+        --border: 210 50% 40%;
+        --input: 210 50% 40%;
+        --ring: 180 100% 90%;
+        --chart-1: 200 100% 28%;
+        --chart-2: 201 99% 25%;
+        --chart-3: 203 98% 22%;
+        --chart-4: 204 100% 18%;
+        --chart-5: 206 100% 15%;
+        --radius: 0rem;
+      }
+    </style> -->
+    <!-- <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        --font-sans-serif: "Bricolage Grotesque";
+      }
+    </style> -->
+    <!-- <style>
+      body {
+        font-family: "Space Mono", monospace;
+        --font-monospace: "Space Mono";
+      }
+    </style> -->
+    <div class="w-full">
+      <header
+        class="flex h-16 items-center justify-between bg-background px-4 md:px-6"
+      >
+        <a class="flex items-center gap-2" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6"
+          >
+            <path d="M8 6v6"></path>
+            <path d="M15 6v6"></path>
+            <path d="M2 12h19.6"></path>
+            <path
+              d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"
+            ></path>
+            <circle cx="7" cy="18" r="2"></circle>
+            <path d="M9 18h5"></path>
+            <circle cx="16" cy="18" r="2"></circle>
+          </svg>
+          <span class="text-lg font-bold">Bus Scheduler</span>
+        </a>
+        <nav class="hidden items-center gap-4 md:flex">
+          <a
+            class="text-sm font-medium transition-colors hover:text-primary"
+            href="#"
+          >
+            Home
+          </a>
+          <a
+            class="text-sm font-medium transition-colors hover:text-primary"
+            href="#"
+          >
+            Schedule
+          </a>
+          <a
+            class="text-sm font-medium transition-colors hover:text-primary"
+            href="#"
+          >
+            Routes
+          </a>
+          <a
+            class="text-sm font-medium transition-colors hover:text-primary"
+            href="#"
+          >
+            Contact Us
+          </a>
+          <a
+            class="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            href="#"
+          >
+            Login
+          </a>
+        </nav>
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6"
+          >
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <span class="sr-only">Toggle menu</span>
+        </button>
+      </header>
+      <section class="bg-muted py-12 md:py-16">
+        <div
+          class="container flex flex-col items-center justify-center gap-6 px-4 md:px-6"
+        >
+          <div class="space-y-2 text-center">
+            <h1 class="text-3xl font-bold tracking-tighter md:text-4xl">
+              Plan Your Bus Journey
+            </h1>
+            <p class="text-muted-foreground md:text-lg">
+              Find the best route and schedule for your bus trip.
+            </p>
+          </div>
+          <form
+            class="flex w-full max-w-md flex-col items-center gap-4 md:flex-row"
+          >
+            <div class="flex-1">
+              <label for="from" class="mb-1 block text-sm font-medium">
+                From
+              </label>
+              <button
+                type="button"
+                role="combobox"
+                aria-controls="radix-:R4raafnnkr:"
+                aria-expanded="false"
+                aria-autocomplete="none"
+                dir="ltr"
+                data-state="closed"
+                data-placeholder=""
+                class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <span style="pointer-events: none"
+                  >Select departure location</span
+                >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+              <select
+                aria-hidden="true"
+                tabindex="-1"
+                style="
+                  position: absolute;
+                  border: 0;
+                  width: 1px;
+                  height: 1px;
+                  padding: 0;
+                  margin: -1px;
+                  overflow: hidden;
+                  clip: rect(0, 0, 0, 0);
+                  white-space: nowrap;
+                  word-wrap: normal;
+                "
+              >
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="flex-1">
+              <label for="to" class="mb-1 block text-sm font-medium">
+                To
+              </label>
+              <button
+                type="button"
+                role="combobox"
+                aria-controls="radix-:R5baafnnkr:"
+                aria-expanded="false"
+                aria-autocomplete="none"
+                dir="ltr"
+                data-state="closed"
+                data-placeholder=""
+                class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <span style="pointer-events: none"
+                  >Select destination location</span
+                >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+              <select
+                aria-hidden="true"
+                tabindex="-1"
+                style="
+                  position: absolute;
+                  border: 0;
+                  width: 1px;
+                  height: 1px;
+                  padding: 0;
+                  margin: -1px;
+                  overflow: hidden;
+                  clip: rect(0, 0, 0, 0);
+                  white-space: nowrap;
+                  word-wrap: normal;
+                "
+              >
+                <option value=""></option>
+              </select>
+            </div>
+            <button
+              class="whitespace-nowrap ring-offset-background focus-visible:ring-offset-2 py-2 inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
